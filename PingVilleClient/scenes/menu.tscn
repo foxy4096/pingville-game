@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/orange juice 2.0.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scenes/menu.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 200
+font_data = ExtResource( 1 )
+
+[node name="menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="bg" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.282353, 0.282353, 0.282353, 1 )
+
+[node name="logo" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -335.0
+margin_top = 28.0
+margin_right = 370.0
+margin_bottom = 228.0
+custom_colors/font_color = Color( 0.576471, 0.6, 0.717647, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "PingVille"
+align = 1
+valign = 1
+
+[node name="form" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -168.5
+margin_top = -168.5
+margin_right = 168.5
+margin_bottom = 168.5
+
+[node name="login_request" type="HTTPRequest" parent="form"]
+
+[node name="fetch_user_request" type="HTTPRequest" parent="form"]
+
+[node name="username" type="LineEdit" parent="form"]
+margin_right = 338.0
+margin_bottom = 39.0
+text = "foxy4096"
+placeholder_text = "username"
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="password" type="LineEdit" parent="form"]
+margin_left = 0.5
+margin_top = 59.0
+margin_right = 338.5
+margin_bottom = 104.0
+text = "jampruvb9"
+secret = true
+placeholder_text = "password"
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="Button" type="Button" parent="form"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -167.5
+margin_top = -29.5
+margin_right = 170.5
+margin_bottom = -6.5
+rect_scale = Vector2( 1.00399, 1.87132 )
+text = "PLAY"
+
+[node name="LinkButton" type="LinkButton" parent="form"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 190.0
+margin_bottom = 1.0
+text = "Register An Account"
+
+[connection signal="pressed" from="form/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="form/LinkButton" to="." method="_on_LinkButton_pressed"]

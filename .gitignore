@@ -1,0 +1,38 @@
+# A normal godot3 gitignore file
+
+# Godot-specific files
+.import/
+.export/
+export.cfg
+export_presets.cfg
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.tmp
+*.bak
+*.old
+*.orig
+
+# Compiled files
+*.exe
+*.dll
+*.so
+*.dylib
+*.class
+*.pyc
+*.pyo
+
+# Logs
+*.log
+
+# Other
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Godot-specific files
+*.import
