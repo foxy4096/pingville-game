@@ -25,9 +25,6 @@ func _ready():
 
 
 func _on_Button_pressed():
-	LogText.add_log_entry("YOU CLICKED THE BUTTON")
-	LogText.add_log_entry("USERNAME: " + username_ui.text)
-	LogText.add_log_entry("PASSWORD: " + password_ui.text)
 	login_to_server(username_ui.text, password_ui.text)
 
 func login_to_server(username, password):

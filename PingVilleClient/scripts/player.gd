@@ -29,8 +29,10 @@ func _process(_delta):
 
 		if Input.is_action_pressed("ui_right"):
 			input_velocity.x += 1
+			$Sprite.flip_h = false
 		if Input.is_action_pressed("ui_left"):
 			input_velocity.x -= 1
+			$Sprite.flip_h = true
 		if Input.is_action_pressed("ui_down"):
 			input_velocity.y += 1
 		if Input.is_action_pressed("ui_up"):
@@ -41,7 +43,9 @@ func _process(_delta):
 
 		if input_velocity != Vector2.ZERO:
 			var _t = move_and_slide(velocity)
-			Server.sync_position(global_position)
+			$Sprite.play("walk")
+			Server.sync_position(global_position, int($Sprite.flip_h), "walk")
+	$Sprite.play("default")
 
 func _on_sync_timer_timeout():
 	# You can send an HTTP request here to sync the position
